@@ -70,7 +70,7 @@
     "typescript": "^3.4.5"
   },
   "peerDependencies": {
-    "@react-native-community/slider": "^1.1.2",
+    "@react-native-community/slider": "^2.0.2",
     "react": "*",
     "react-native": "*",
     "react-native-reanimated": "*",
