@@ -10,6 +10,7 @@ export enum YTWebViewState {
 export interface YTWebViewProps {
   videoId: string;
   autoPlay?: Boolean;
+  isSeekRequired?: Boolean;
   style?: {};
   onReady?: () => void;
   onError?: () => void;
@@ -28,6 +29,7 @@ export interface PlayerState {
   layoutReady: Boolean;
   fullScreen: Boolean;
   play: Boolean;
+  isSeekRequired: Boolean,
   duration: number;
   currentTime: number;
   layout: {
@@ -39,6 +41,7 @@ export interface PlayerState {
 export const YTWebViewDefaultProps = {
   style: {},
   autoPlay: false,
+  isSeekRequired: true,
   onReady: () => {},
   onError: () => {},
   onPlay: () => {},
@@ -53,6 +56,7 @@ export const YTWebViewDefaultProps = {
 
 export interface PlayerProps extends YTWebViewProps {
   loop: Boolean;
+  isSeekRequired: Boolean;
   topBar?: ({
     play,
     fullScreen
