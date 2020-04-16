@@ -268,6 +268,7 @@ export default class Player extends PureComponent<PlayerProps, PlayerState> {
                 toggleFS,
                 topBar,
                 showFullScreenButton,
+                isSeekRequired,
                 ...this.state
               }}
             />
