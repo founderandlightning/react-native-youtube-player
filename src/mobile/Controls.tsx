@@ -98,7 +98,7 @@ export default ({
             {ready && play && <PauseIcon onPress={pauseVideo} />}
             {ready && !play && <PlayIcon onPress={playVideo} />}
 
-            <View style={[styles.footer, { bottom: fullScreen ? 30 : 10 }]}>
+            <View style={[styles.footer, { bottom: fullScreen ? 12 : 10 }]}>
               <Text style={styles.text}> {sec2time(currentTime)} </Text>
               <View style={styles.footerRight}>
                 <Text style={styles.text}> {sec2time(duration)} </Text>
