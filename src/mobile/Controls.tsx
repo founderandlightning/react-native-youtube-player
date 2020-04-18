@@ -7,7 +7,7 @@ import {
   ActivityIndicator
 } from "react-native";
 import { PlayIcon, PauseIcon, FSIcon, ExitFSIcon } from "./icons";
-import ProgressBar from "./ProgressBar";
+// import ProgressBar from "./ProgressBar";
 import { sec2time } from "./Utils";
 
 const TIME_TO_HIDE_CONTROLS = 2000;
@@ -41,11 +41,11 @@ export default ({
   currentTime,
   playVideo,
   pauseVideo,
-  seekTo,
+  // seekTo,
   toggleFS,
   fullScreen,
   showFullScreenButton,
-  isSeekRequired,
+  // isSeekRequired,
 }: Props) => {
   const [visible, setVisible] = useState(true);
   const ref: { current: any } = useRef(0);
@@ -67,8 +67,8 @@ export default ({
       clearTimeout(ref.current);
     };
   }, [play, ready]);
-  const progress =
-    currentTime !== 0 && duration !== 0 ? currentTime / duration : 0;
+  // const progress =
+  //   currentTime !== 0 && duration !== 0 ? currentTime / duration : 0;
 
   return (
     <View
@@ -116,12 +116,12 @@ export default ({
           </View>
         </TouchableWithoutFeedback>
       )}
-      {isSeekRequired &&
+      {/* {isSeekRequired &&
         <ProgressBar
           value={progress}
           {...{ fullScreen, visible, seekTo, duration, pauseVideo, playVideo }}
         />
-      }
+      } */}
     </View>
   );
 };
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.6)"
   },
   footer: {
-    width: "100%",
+    width: "95%",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
