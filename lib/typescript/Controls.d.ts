@@ -1,6 +1,5 @@
 import React from "react";
 declare type Props = {
-    isSeekRequired: Boolean;
     play: Boolean;
     ready: Boolean;
     showFullScreenButton?: Boolean;

@@ -4,7 +4,6 @@ export default class YTWebView extends Component<YTWebViewProps> {
     static defaultProps: {
         style: {};
         autoPlay: boolean;
-        isSeekRequired: boolean;
         onReady: () => void;
         onError: () => void;
         onPlay: () => void;

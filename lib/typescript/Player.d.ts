@@ -9,7 +9,6 @@ export default class Player extends PureComponent<PlayerProps, PlayerState> {
         onStart: () => void;
         style: {};
         autoPlay: boolean;
-        isSeekRequired: boolean;
         onReady: () => void;
         onError: () => void;
         onPlay: () => void;

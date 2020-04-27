@@ -13,7 +13,6 @@ import { sec2time } from "./Utils";
 const TIME_TO_HIDE_CONTROLS = 2000;
 
 type Props = {
-  isSeekRequired: Boolean,
   play: Boolean;
   ready: Boolean;
   showFullScreenButton?: Boolean;
@@ -45,7 +44,6 @@ export default ({
   toggleFS,
   fullScreen,
   showFullScreenButton,
-  // isSeekRequired,
 }: Props) => {
   const [visible, setVisible] = useState(true);
   const ref: { current: any } = useRef(0);
@@ -116,12 +114,12 @@ export default ({
           </View>
         </TouchableWithoutFeedback>
       )}
-      {/* {isSeekRequired &&
-        <ProgressBar
+      
+        {/* <ProgressBar
           value={progress}
           {...{ fullScreen, visible, seekTo, duration, pauseVideo, playVideo }}
-        />
-      } */}
+        /> */}
+     
     </View>
   );
 };
