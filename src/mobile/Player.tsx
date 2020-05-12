@@ -228,6 +228,7 @@ export default class Player extends PureComponent<PlayerProps, PlayerState> {
                 onError={this.onError}
                 onPlaying={this.onPlaying}
                 onEnd={this.onEnd}
+                onStateChange={this.onStateChange}
               />
               <PlayerControls
                 {...{
@@ -257,6 +258,7 @@ export default class Player extends PureComponent<PlayerProps, PlayerState> {
               onError={this.onError}
               onPlaying={this.onPlaying}
               onEnd={this.onEnd}
+              onStateChange={this.onStateChange}
             />
             <PlayerControls
               {...{
