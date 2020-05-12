@@ -7,6 +7,7 @@ export default class Player extends PureComponent<PlayerProps, PlayerState> {
         loop: boolean;
         showFullScreenButton: boolean;
         onStart: () => void;
+        handleOrientation: boolean;
         style: {};
         autoPlay: boolean;
         onReady: () => void;

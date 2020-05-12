@@ -122,7 +122,7 @@ export default class Player extends PureComponent<PlayerProps, PlayerState> {
   };
 
   onRotated = orientation => {
-    if (this._isUserUsingIconToFullScreen) return;
+    if (this._isUserUsingIconToFullScreen || !this.props.handleOrientation) return;
     Orientation.unlockAllOrientations();
     const rotateToFullScreen = true;
     if (rotateToFullScreen) {
@@ -151,7 +151,7 @@ export default class Player extends PureComponent<PlayerProps, PlayerState> {
     }
   };
   onBackButtonClick = () => {
-    if (this.state.fullScreen) {
+    if (this.state.fullScreen && this.props.handleOrientation) {
       this.toggleFS();
       return true;
     }
