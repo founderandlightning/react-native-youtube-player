@@ -3,12 +3,17 @@ import {
   View,
   StyleSheet,
   TouchableWithoutFeedback,
-  Text,
+  // Text,
   ActivityIndicator
 } from "react-native";
-import { PlayIcon, PauseIcon, FSIcon, ExitFSIcon } from "./icons";
-// import ProgressBar from "./ProgressBar";
-import { sec2time } from "./Utils";
+import {
+  PlayIcon,
+  PauseIcon,
+  // FSIcon,
+  // ExitFSIcon
+} from "./icons";
+import ProgressBar from "./ProgressBar";
+// import { sec2time } from "./Utils";
 
 const TIME_TO_HIDE_CONTROLS = 2000;
 
@@ -17,6 +22,7 @@ type Props = {
   ready: Boolean;
   showFullScreenButton?: Boolean;
   fullScreen: Boolean;
+  showSeekbar: Boolean;
   duration: number;
   currentTime: number;
   playVideo: () => void;
@@ -40,10 +46,11 @@ export default ({
   currentTime,
   playVideo,
   pauseVideo,
-  // seekTo,
-  toggleFS,
+  seekTo,
+  // toggleFS,
   fullScreen,
-  showFullScreenButton,
+  // showFullScreenButton,
+  showSeekbar,
 }: Props) => {
   const [visible, setVisible] = useState(true);
   const ref: { current: any } = useRef(0);
@@ -65,8 +72,8 @@ export default ({
       clearTimeout(ref.current);
     };
   }, [play, ready]);
-  // const progress =
-  //   currentTime !== 0 && duration !== 0 ? currentTime / duration : 0;
+  const progress =
+    currentTime !== 0 && duration !== 0 ? currentTime / duration : 0;
 
   return (
     <View
@@ -96,7 +103,7 @@ export default ({
             {ready && play && <PauseIcon onPress={pauseVideo} />}
             {ready && !play && <PlayIcon onPress={playVideo} />}
 
-            <View style={[styles.footer, { bottom: fullScreen ? 12 : 10 }]}>
+            {/* <View style={[styles.footer, { bottom: fullScreen ? 30 : 20 }]}>
               <Text style={styles.text}> {sec2time(currentTime)} </Text>
               <View style={styles.footerRight}>
                 <Text style={styles.text}> {sec2time(duration)} </Text>
@@ -110,15 +117,15 @@ export default ({
                   </React.Fragment>
                 )}
               </View>
-            </View>
+            </View> */}
           </View>
         </TouchableWithoutFeedback>
       )}
       
-        {/* <ProgressBar
+        <ProgressBar
           value={progress}
-          {...{ fullScreen, visible, seekTo, duration, pauseVideo, playVideo }}
-        /> */}
+          {...{ fullScreen, visible: showSeekbar, seekTo, duration, pauseVideo, playVideo }}
+        />
      
     </View>
   );

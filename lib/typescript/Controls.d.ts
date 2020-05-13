@@ -4,6 +4,7 @@ declare type Props = {
     ready: Boolean;
     showFullScreenButton?: Boolean;
     fullScreen: Boolean;
+    showSeekbar: Boolean;
     duration: number;
     currentTime: number;
     playVideo: () => void;
@@ -15,5 +16,5 @@ declare type Props = {
         fullScreen?: Boolean;
     }) => React.ReactNode;
 };
-declare const _default: ({ play, topBar, ready, duration, currentTime, playVideo, pauseVideo, toggleFS, fullScreen, showFullScreenButton, }: Props) => JSX.Element;
+declare const _default: ({ play, topBar, ready, duration, currentTime, playVideo, pauseVideo, seekTo, fullScreen, showSeekbar, }: Props) => JSX.Element;
 export default _default;

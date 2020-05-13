@@ -199,7 +199,7 @@ export default class Player extends PureComponent<PlayerProps, PlayerState> {
     const AbsoluteStyle = IsAndroid ? { ...this.state.layout } : {};
 
     const { playVideo, pauseVideo, seekTo, toggleFS } = this;
-    const { videoId, autoPlay, topBar, showFullScreenButton } = this.props;
+    const { videoId, autoPlay, topBar, showFullScreenButton, showSeekbar } = this.props;
     const style: any = {
       ...VideoStyle,
       ...AbsoluteStyle,
@@ -238,6 +238,7 @@ export default class Player extends PureComponent<PlayerProps, PlayerState> {
                   toggleFS,
                   topBar,
                   showFullScreenButton,
+                  showSeekbar,
                   ...this.state
                 }}
               />
@@ -268,6 +269,7 @@ export default class Player extends PureComponent<PlayerProps, PlayerState> {
                 toggleFS,
                 topBar,
                 showFullScreenButton,
+                showSeekbar,
                 ...this.state
               }}
             />

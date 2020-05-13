@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
+import React, {
+  // useRef
+} from "react";
 import { StyleSheet, View } from "react-native";
-import Animated, { Easing } from "react-native-reanimated";
+// import Animated, { Easing } from "react-native-reanimated";
 import Slider from "@react-native-community/slider";
 
 type Props = {
@@ -22,8 +24,8 @@ export default ({
   playVideo,
   fullScreen
 }: Props) => (
-  <View style={[styles.container, { bottom: fullScreen ? 20 : 0 }]}>
-    <Progress progress={value} />
+  <View style={[styles.container, { bottom: fullScreen ? 20 : 10 }]}>
+    {/* <Progress progress={value} /> */}
     {visible && (
       <Slider
         style={[styles.progress, { zIndex: 99, elevation: 99 }]}
@@ -43,22 +45,22 @@ export default ({
   </View>
 );
 
-const Progress = ({ progress }: { progress: number }) => {
-  const ref = useRef(new Animated.Value(0));
-  Animated.timing(ref.current, {
-    toValue: progress,
-    duration: 250,
-    easing: Easing.inOut(Easing.ease)
-  }).start();
+// const Progress = ({ progress }: { progress: number }) => {
+//   const ref = useRef(new Animated.Value(0));
+//   Animated.timing(ref.current, {
+//     toValue: progress,
+//     duration: 250,
+//     easing: Easing.inOut(Easing.ease)
+//   }).start();
 
-  return (
-    <View style={styles.outerBar}>
-      <Animated.View
-        style={{ flex: ref.current, backgroundColor: "red", height: 2 }}
-      />
-    </View>
-  );
-};
+//   return (
+//     <View style={styles.outerBar}>
+//       <Animated.View
+//         style={{ flex: ref.current, backgroundColor: "red", height: 2 }}
+//       />
+//     </View>
+//   );
+// };
 
 const styles = StyleSheet.create({
   container: {

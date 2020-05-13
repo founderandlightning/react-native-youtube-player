@@ -58,6 +58,7 @@ export interface PlayerProps extends YTWebViewProps {
     onFullScreen?: (fullscreen: Boolean) => void;
     onStart?: () => void;
     handleOrientation?: Boolean;
+    showSeekbar?: Boolean;
 }
 export declare const PlayerDefaultProps: {
     onFullScreen: () => void;
@@ -65,6 +66,7 @@ export declare const PlayerDefaultProps: {
     showFullScreenButton: boolean;
     onStart: () => void;
     handleOrientation: boolean;
+    showSeekbar: boolean;
     style: {};
     autoPlay: boolean;
     onReady: () => void;
